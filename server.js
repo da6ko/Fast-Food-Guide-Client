@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 const uri = 'YOUR_MONGODB_URI';
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-let userInformation;
+
 
 const dbName = 'feedbackDB';
 const collectionName = 'feedbackCollection';
