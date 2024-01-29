@@ -33,8 +33,8 @@ connectToMongoDBAtlas();
 
 app.post('/submit-feedback', express.json(), async (req, res) => {
   try {
-    const { name, rate, comment } = req.body;
-    await userInformation.insertOne({ name, rate, comment });
+    const { name, rate, comment, latitude, longitude } = req.body;
+    await userInformation.insertOne({ name, rate, comment, latitude, longitude });
     res.status(200).send('Feedback submitted successfully!');
   } catch (error) {
     console.error(error);
