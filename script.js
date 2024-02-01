@@ -1,4 +1,5 @@
 let map;
+let marker;
 
 document.addEventListener('DOMContentLoaded', function () {
   map = L.map('map').setView([42.7339, 25.4858], 6);
@@ -15,8 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
 function updateCoordinates(latlng) {
   document.getElementById('latitude').value = latlng.lat;
   document.getElementById('longitude').value = latlng.lng;
-}
+  if (marker) {
+    map.removeLayer(marker);
+  }
 
+  marker = L.marker(latlng).addTo(map);
+}
 
 function submitFeedback() {
   const name = document.getElementById('name').value;
