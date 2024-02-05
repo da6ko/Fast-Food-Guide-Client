@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
 
 app.use(express.static('public'));
 
-const uri = 'your-mongodb-uri';
+const uri = 'YOUR_DATABASE_URI';
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
